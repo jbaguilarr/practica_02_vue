@@ -43,20 +43,10 @@ export default createStore({
         }
     },
     mutations: {
-       SET_PEDIDO(state,objPedido){
-          state.pedido = objPedido;
-       },
-       SET_BLOQUEAR(state,valor){
-         state.bloquear = valor;
-       },
+      
     },
     actions: {
-        setPedido ({commit},objPedido){
-                commit("SET_PEDIDO",objPedido);
-        },
-        setBloquear({commit},valor){
-            commit("SET_BLOQUEAR",valor);
-        }
+     
     },
     modules: {
     }
