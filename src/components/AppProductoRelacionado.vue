@@ -5,11 +5,11 @@
             <h4>Productos relacionados</h4>
         </div>
         <div class="row">
-            <div class="col" v-for="producto in productosRelacionados">
+            <div class="col" v-for="producto in productosRelacionados" @click="url(producto.id)" style="cursor:pointer">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">{{producto.nombre}}</h5>
-                        <img :src="producto.imagen" alt="" width="100%">
+                        <img :src="producto.imagen" alt="" style="width: 100%">
                         <p class="card-text">{{producto.descripcion}}</p>
                             <div class="producto-relacionado-precio">Precio:{{producto.precio}} BOB</div>
                         <div>
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-
+import { router } from '@/router';
 export default {
   name: 'appProductoRelacionado',
   components: {     
@@ -50,6 +50,9 @@ export default {
                   })
                   .catch(e => console.log(e));
            },
+           url : (id) => {
+               window.location.href = `/producto/detalle/${id}`;
+           }
     },
     computed: {
           // ...mapGetters(['getPrecioEstilos'])

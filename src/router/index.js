@@ -7,11 +7,11 @@ const routes = [
     name: 'inicio',
     component: PrincipalView
   },
-  // {
-  //   path: '/producto/detalle/:id',
-  //   name: 'verTarea',
-  //   component: () => import('../views/VerTareaView.vue')
-  // },
+  {
+    path: '/producto/detalle/:id',
+    name: 'detalle',
+    component: () => import('../views/DetalleProductoView.vue')
+  },
 ]
 
 const router = createRouter({
